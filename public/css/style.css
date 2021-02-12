@@ -1,0 +1,67 @@
+body {
+  width: 600px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.table {
+  margin: 0 auto;
+  width: 100%;
+  border-collapse: collapse;
+  border: 2px solid #90d9f1;
+}
+
+thead {
+  background-color: #90d9f1;
+}
+
+tbody .table__row:nth-child(even) {
+  background-color: rgba(173, 216, 230, 0.4);
+}
+
+tbody .table__row:nth-child(odd) {
+  background-color: rgba(119, 204, 230, 0.4);
+}
+
+.table__data {
+  padding: 10px;
+  width: 25%;
+  border: 1px solid #fff;
+}
+
+tr .table__data:first-child {
+  width: 10%;
+  max-width: 30px;
+  word-wrap: break-word;
+}
+
+.search-form {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  margin-bottom: 5px;
+}
+
+.search-input {
+  flex-grow: 1;
+  padding: 10px 5px;
+  border: 1px solid  #90d9f1;
+  font-size: 16px;
+  background-color: rgba(119, 204, 230, 0.4);
+}
+
+.search-button {
+  font-size: 16px;
+  width: 25%;
+  border: unset;
+  border: 1px solid #51ccf5;
+  background-color: #90d9f1;
+}
+
+.search-button:hover {
+  background-color: rgba(81, 204, 245, 0.6);
+}
+
+.search-button:active {
+  background-color: rgba(81, 204, 245, 1);
+}
