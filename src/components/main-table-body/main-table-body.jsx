@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import {NameSpace} from '../../store/reducers/root';
 import MainTableRow from "../main-table-row/main-table-row";
 import {ActionCreator} from '../../store/action';
+import {getFilteredUsers} from '../../store/selectors';
 
 const MainTableBody = ({users, activeRow, setActiveRow}) => {
   return (
@@ -34,7 +35,7 @@ MainTableBody.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-  users: state[NameSpace.USERS_DATA].users,
+  users: getFilteredUsers(state),
   activeRow: state[NameSpace.INTERFACE_DATA].activeRow
 });
 
