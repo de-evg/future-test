@@ -1,4 +1,5 @@
 /* eslint-disable default-case */
+import { DEFAULT_SORT } from "../../../const";
 import { ActionType } from "../../action";
 
 const initialState = {
@@ -32,6 +33,8 @@ const initialState = {
       description: "et lacus magna dolor...",
     },
   ],
+  filter: "",
+  activeSort: DEFAULT_SORT,
 };
 
 const updateUsers = (users, update) => {
@@ -56,6 +59,9 @@ export const usersData = (state = initialState, action) => {
     case ActionType.UPDATE_USERS:
       const newUsers = updateUsers(state.users, action.payload);
       return { ...state, ...{ users: newUsers } };
+
+    case ActionType.UPDATE_SORT:
+      return { ...state, activeSort: action.payload };
   }
   return state;
 };

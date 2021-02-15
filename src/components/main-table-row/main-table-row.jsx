@@ -1,6 +1,6 @@
 import React, {useCallback} from 'react';
 import PropTypes from 'prop-types';
-import TableData from '../table-data.jsx/table-data';
+import TableData from '../table-data/table-data';
 import Details from '../details/details';
 import {showingStatus} from '../../const';
 

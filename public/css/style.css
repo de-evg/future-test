@@ -271,3 +271,27 @@ tr .table__data:first-child {
 .details__description {
   width: 80%;
 }
+
+.sort__arrow-up {
+  position: relative;
+  display: inline-block;
+  bottom: 3px;
+  left: 5px;
+  width: 0;
+  height: 0;
+
+  border: 5px solid transparent;
+  border-bottom-color: black;
+}
+
+.sort__arrow-down {
+  position: relative;
+  display: inline-block;
+  top: 3px;
+  left: 5px;
+  width: 0;
+  height: 0;
+
+  border: 5px solid transparent;
+  border-top-color: black;
+}

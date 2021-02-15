@@ -8,6 +8,7 @@ import MainMenu from '../main-menu/main-menu';
 import {connect} from 'react-redux';
 import {NameSpace} from '../../store/reducers/root';
 import {showingStatus} from '../../const';
+import TableHead from '../main-table-head/main-table-head';
 
 const App = ({addRowFormVisualStatus, searchFormVisualStatus}) => {
   let visualClass = "";
@@ -24,7 +25,7 @@ const App = ({addRowFormVisualStatus, searchFormVisualStatus}) => {
         <AddTableForm />
         <Search />
       </div>
-      <Table tableBody={<MainTableBody />} />
+      <Table  TableHead={<TableHead />} TableBody={<MainTableBody />} />
     </>
   );
 };
