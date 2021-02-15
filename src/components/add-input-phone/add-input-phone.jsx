@@ -7,11 +7,11 @@ import {NameSpace} from '../../store/reducers/root';
 const AddInputPhone = ({phone, updateInput}) => {
   const handleChange = useCallback((evt) => {
     evt.preventDefault();
-    updateInput({phone: evt.target.value})
+    updateInput({phone: evt.target.value, isPhoneValid: true})
   }, [updateInput])
 
   return (
-    <input id="id" type="text" value={phone} onChange={handleChange} />
+    <input id="id" type="tel" value={phone} onChange={handleChange} placeholder="+71234567890" pattern="+\d[0-9]\s([0-9]{3}\s([0-9]{3})\s([0-9]{2})\s([0-9]{2}" required />
   );
 };
 

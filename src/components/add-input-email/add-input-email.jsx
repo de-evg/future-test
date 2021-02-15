@@ -7,11 +7,11 @@ import {NameSpace} from '../../store/reducers/root';
 const AddInputEmail = ({email, updateInput}) => {
   const handleChange = useCallback((evt) => {
     evt.preventDefault();
-    updateInput({email: evt.target.value})
+    updateInput({email: evt.target.value, isEmailValid: true})
   }, [updateInput])
 
   return (
-    <input id="id" type="text" value={email} onChange={handleChange} />
+    <input id="id" type="email" value={email} onChange={handleChange} placeholder="your@email.ru" required />
   );
 };
 
@@ -20,14 +20,14 @@ AddInputEmail.propTypes = {
   updateInput: PropTypes.func.isRequired
 }
 
-const mapStateToProps = (state) => (({
+const mapStateToProps = (state) => ({
   email: state[NameSpace.NEW_ROW].email
-}));
+});
 
 const mapDispatchToProps = (dispatch) => ({
   updateInput(newValue) {
     dispatch(ActionCreator.updateNewRow(newValue))
   }
-})
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddInputEmail);

@@ -7,11 +7,11 @@ import {NameSpace} from '../../store/reducers/root';
 const AddInputFirstname = ({firstName, updateInput}) => {
   const handleChange = useCallback((evt) => {
     evt.preventDefault();
-    updateInput({firstName: evt.target.value})
+    updateInput({firstName: evt.target.value, isFirstNameValid: true})
   }, [updateInput])
 
   return (
-    <input id="id" type="text" value={firstName} onChange={handleChange} />
+    <input id="id" type="text" value={firstName} onChange={handleChange} placeholder="Имя" required />
   );
 };
 

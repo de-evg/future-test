@@ -6,7 +6,12 @@ const initialState = {
   firstName: "",
   lastName: "",
   phone: "",
-  email: ""
+  email: "",
+  isIdValid: false,
+  isFirsNameValid: false,
+  isLastNameValid: false,
+  isPhoneValid: false,
+  isEmailValid: false
 };
 
 export const newRow = (state = initialState, action) => {

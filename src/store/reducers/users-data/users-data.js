@@ -1,5 +1,5 @@
 /* eslint-disable default-case */
-import {ActionType} from "../../action";
+import { ActionType } from "../../action";
 
 const initialState = {
   users: [
@@ -35,17 +35,27 @@ const initialState = {
 };
 
 const updateUsers = (users, update) => {
-  return [update, ...users];
+  const updateWithTemplate = {
+    ...update,
+    address: {
+      streetAddress: "",
+      city: "",
+      state: "",
+      zip: "",
+    },
+    description: "",
+  };
+  return [updateWithTemplate, ...users];
 };
 
 export const usersData = (state = initialState, action) => {
   switch (action.type) {
     case ActionType.ON_LOAD:
-      return {...state, ...action.payload}
+      return { ...state, ...action.payload };
 
     case ActionType.UPDATE_USERS:
       const newUsers = updateUsers(state.users, action.payload);
-      return {...state, ...{users: newUsers}}
+      return { ...state, ...{ users: newUsers } };
   }
   return state;
 };

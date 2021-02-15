@@ -7,7 +7,21 @@ import {NameSpace} from '../../store/reducers/root';
 import {showingStatus} from '../../const';
 import {ActionCreator} from "../../store/action";
 
-const AddTableForm = ({addRowFormVisualStatus, submitNewRow, resetInputs, id, firstName, lastName, email, phone}) => {
+const AddTableForm = ({
+  addRowFormVisualStatus, 
+  submitNewRow, 
+  resetInputs, 
+  id, 
+  firstName, 
+  lastName, 
+  email, 
+  phone, 
+  isIdValid,
+  isFirstNameValid,
+  isLastNameValid,
+  isPhoneValid,
+  isEmailValid}) => {
+    
   let visualClass = "";
   if (addRowFormVisualStatus === showingStatus.HIDE) {
     visualClass = "add-row-form--hidden";
@@ -18,11 +32,13 @@ const AddTableForm = ({addRowFormVisualStatus, submitNewRow, resetInputs, id, fi
 
   const handleSubmit = useCallback((evt) => {
     evt.preventDefault();
-    submitNewRow({
-      id, firstName, lastName, email, phone
-    });
-    resetInputs();
-  }, [submitNewRow, resetInputs, id, firstName, lastName, email, phone]);
+    if (isIdValid && isFirstNameValid && isLastNameValid && isPhoneValid && isEmailValid) {
+      submitNewRow({
+        id, firstName, lastName, email, phone
+      });
+      resetInputs();
+    }    
+  }, [submitNewRow, resetInputs, id, firstName, lastName, email, phone,isIdValid, isFirstNameValid, isLastNameValid, isPhoneValid, isEmailValid]);
 
   return (
     <form onSubmit={handleSubmit} action="#" className={`add-row-form ${visualClass}`}>
@@ -41,6 +57,11 @@ AddTableForm.propTypes = {
   lastName: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
   phone: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  isIdValid: PropTypes.bool.isRequired,
+  isFirstNameValid: PropTypes.bool.isRequired,
+  isLastNameValid: PropTypes.bool.isRequired,
+  isPhoneValid: PropTypes.bool.isRequired,
+  isEmailValid: PropTypes.bool.isRequired,
 };
 
 const mapStateToProps = (state) => ({
@@ -50,6 +71,11 @@ const mapStateToProps = (state) => ({
   lastName: state[NameSpace.NEW_ROW].lastName,
   phone: state[NameSpace.NEW_ROW].phone,
   email: state[NameSpace.NEW_ROW].email,
+  isIdValid: state[NameSpace.NEW_ROW].isIdValid,
+  isFirstNameValid: state[NameSpace.NEW_ROW].isFirstNameValid,
+  isLastNameValid: state[NameSpace.NEW_ROW].isLastNameValid,
+  isPhoneValid: state[NameSpace.NEW_ROW].isPhoneValid,
+  isEmailValid: state[NameSpace.NEW_ROW].isEmailValid,
 });
 
 const mapDispatchToProps = (dispatch) => ({

@@ -130,8 +130,18 @@ tr .table__data:first-child {
   width: 1084px;
 }
 
-.add-row-form  input {
+.add-row-form input {
   width: 70%;
+  border: unset;
+  border: 2px solid #d2e7e6;
+}
+
+.add-row-form input:hover {
+  border-color:  #128277;
+}
+
+.add-row-form  input:valid {
+  border-color: #d2e7e6;
 }
 
 .add-row-form table {
