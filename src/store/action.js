@@ -1,5 +1,5 @@
 export const ActionType = {
-  ON_LOAD: `ON_LOAD`,
+  LOAD: `LOAD`,
   UPDATE_VISUALLY_SEARCH_FORM: `UPDATE_VISUALLY_SEARCH_FORM`,
   UPDATE_VISUALLY_ADD_ROW_FORM: `UPDATE_VISUALLY_ADD_ROW_FORM`,
   UPDATE_NEW_ROW: `UPDATE_NEW_ROW`,
@@ -7,10 +7,16 @@ export const ActionType = {
   RESET_NEW_ROW: `RESET_NEW_ROW`,
   UPDATE_ACTIVE_ROW: `UPDATE_ACTIVE_ROW`,
   UPDATE_SORT: `UPDATE_SORT`,
-  UPDATE_FILTER: `UPDATE_FILTER`
+  UPDATE_FILTER: `UPDATE_FILTER`,
+  UPDATE_STEP: `UPDATE_STEP`,
+  UPDATE_LOADING_STATUS: `UPDATE_LOADING_STATUS`
 };
 
 export const ActionCreator = {
+  fetchUsers: (users) => ({
+    type: ActionType.LOAD,
+    payload: users
+  }),
   updateSearchFormStatus: () => ({
     type: ActionType.UPDATE_VISUALLY_SEARCH_FORM
   }),
@@ -39,5 +45,13 @@ export const ActionCreator = {
   updateFilter: (filter) => ({
     type: ActionType.UPDATE_FILTER,
     payload: filter
+  }),
+  updateCurrentStep: (step) => ({
+    type: ActionType.UPDATE_STEP,
+    payload: step
+  }),
+  updateLoadingStatus: (isLoading) => ({
+    type: ActionType.UPDATE_LOADING_STATUS,
+    payload: isLoading
   })
 };

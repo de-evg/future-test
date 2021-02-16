@@ -6,9 +6,11 @@ import thunk from "redux-thunk";
 import {composeWithDevTools} from 'redux-devtools-extension';
 import App from "./components/app/app";
 import root from "./store/reducers/root.js";
-import {createAPI} from "./api/api";
+import Api from "./api/api";
 
-const api = createAPI();
+const BACKEND_URL = `http://www.filltext.com`;
+
+const api = new Api(BACKEND_URL);
 
 const store = createStore(
   root, composeWithDevTools(

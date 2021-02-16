@@ -5,12 +5,14 @@ import {NameSpace} from '../../store/reducers/root';
 import MainTableRow from "../main-table-row/main-table-row";
 import {ActionCreator} from '../../store/action';
 import {getFilteredUsers} from '../../store/selectors';
+import {STEP} from '../../const';
 
-const MainTableBody = ({users, activeRow, setActiveRow}) => {
+const MainTableBody = ({users, activeRow, setActiveRow, currentStep}) => {
   return (
     <tbody>
-      {users.map((user, i) => (
+      {users.slice().slice(currentStep - STEP, currentStep).map((user, i) => (
         <MainTableRow
+          rowID={`row${i}`}
           key={`row-${i}`}
           user={user}
           activeRow={activeRow}
@@ -31,17 +33,23 @@ MainTableBody.propTypes = {
       phone: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
     })),
   activeRow: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-  setActiveRow: PropTypes.func.isRequired
+  setActiveRow: PropTypes.func.isRequired,
+  currentStep: PropTypes.number.isRequired,
+  updateCurrentStep: PropTypes.func.isRequired
 };
 
 const mapStateToProps = (state) => ({
   users: getFilteredUsers(state),
-  activeRow: state[NameSpace.INTERFACE_DATA].activeRow
+  activeRow: state[NameSpace.INTERFACE_DATA].activeRow,
+  currentStep: state[NameSpace.USERS_DATA].currentStep
 });
 
 const mapDispatchToProps = (dispatch) => ({
   setActiveRow(activeRow) {
     dispatch(ActionCreator.updateActiveRow(activeRow))
+  },
+  updateCurrentStep(step) {
+    dispatch(ActionCreator.updateCurrentStep(step))
   }
 })
 

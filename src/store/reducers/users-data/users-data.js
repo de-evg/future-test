@@ -3,36 +3,8 @@ import { DEFAULT_SORT } from "../../../const";
 import { ActionType } from "../../action";
 
 const initialState = {
-  users: [
-    {
-      id: 2,
-      firstName: `Petr`,
-      lastName: `Petrov`,
-      email: `petr@mail.ru`,
-      phone: `89175507671`,
-      address: {
-        streetAddress: "9792 Mattis Ct",
-        city: "Waukesha",
-        state: "WI",
-        zip: "22178",
-      },
-      description: "et lacus magna dolor...",
-    },
-    {
-      id: 1,
-      firstName: `Ivan`,
-      lastName: `Ivanov`,
-      email: `iven@mail.ru`,
-      phone: `89167707272`,
-      address: {
-        streetAddress: "9792 Mattis Ct",
-        city: "Waukesha",
-        state: "WI",
-        zip: "22178",
-      },
-      description: "et lacus magna dolor...",
-    },
-  ],
+  users: [],
+  currentStep: 50,
   filter: "",
   activeSort: DEFAULT_SORT,
 };
@@ -53,8 +25,8 @@ const updateUsers = (users, update) => {
 
 export const usersData = (state = initialState, action) => {
   switch (action.type) {
-    case ActionType.ON_LOAD:
-      return { ...state, ...action.payload };
+    case ActionType.LOAD:
+      return { ...state, users: action.payload };
 
     case ActionType.UPDATE_USERS:
       const newUsers = updateUsers(state.users, action.payload);
@@ -65,6 +37,9 @@ export const usersData = (state = initialState, action) => {
 
     case ActionType.UPDATE_FILTER:
       return { ...state, filter: action.payload };
+
+    case ActionType.UPDATE_STEP:
+      return { ...state, currentStep: action.payload };
   }
   return state;
 };

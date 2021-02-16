@@ -26,8 +26,10 @@ const AddTableForm = ({ addRowFormVisualStatus, submitNewRow, users }) => {
 
     if (!values.id) {
       errors.id = { borderColor: "red" };
-    } else if (!validateID(values.id)) {      
-      errors.id = !validateID(values.id) ? (errors.id = { borderColor: "red" }) : null;
+    } else if (!validateID(values.id)) {
+      errors.id = !validateID(values.id)
+        ? (errors.id = { borderColor: "red" })
+        : null;
     }
 
     if (!values.firstName) {
@@ -172,7 +174,6 @@ const AddTableForm = ({ addRowFormVisualStatus, submitNewRow, users }) => {
 
 AddTableForm.propTypes = {
   addRowFormVisualStatus: PropTypes.string.isRequired,
-  resetInputs: PropTypes.func.isRequired,
   submitNewRow: PropTypes.func.isRequired,
 };
 
@@ -185,7 +186,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   submitNewRow(newRow) {
     dispatch(ActionCreator.submitNewRow(newRow));
-  }
+  },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddTableForm);

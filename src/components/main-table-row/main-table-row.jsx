@@ -4,28 +4,29 @@ import TableData from '../table-data/table-data';
 import Details from '../details/details';
 import {showingStatus} from '../../const';
 
-const MainTableRow = ({activeRow, setActiveRow, user: {id, firstName, lastName, email, phone, address, description}}) => {
+const MainTableRow = ({activeRow, setActiveRow, rowID, user: {id, firstName, lastName, email, phone, address, description}}) => {
   const cellsData = [id, firstName, lastName, email, phone];
   const details = {address, description, firstName, lastName};
 
   const handleRowClick = useCallback(() => {
-    if (activeRow === id) {
+    if (activeRow === rowID) {
       setActiveRow(showingStatus.UNSET);
     } else {
-      setActiveRow(id);
+      setActiveRow(rowID);
     }    
-  }, [id, activeRow, setActiveRow]);
+  }, [rowID, activeRow, setActiveRow]);
 
-  const activeClass = activeRow === id ? "table__row--active" : ""
+  const activeClass = activeRow === rowID ? "table__row--active" : "";
+  const resetColor = activeRow ? {backgroudColor: "#fff"} : "";
   return (
     <>
-      <tr data-active={activeRow === id} className={`table__row ${activeClass}`} onClick={handleRowClick}>
+      <tr style={resetColor} data-active={activeRow === rowID} className={`table__row ${activeClass}`} onClick={handleRowClick}>
         {
           cellsData.map((cellData, i) => <TableData key={`cell-${i}`} cellData={cellData} />)
         }
       </tr>
       {
-        activeRow === id &&
+        activeRow === rowID &&
         <tr className="table__details-row">
           <td colspan="5"><Details details={details} /></td>
         </tr>
@@ -46,7 +47,8 @@ MainTableRow.propTypes = {
     state: PropTypes.string,
     zip: PropTypes.string
   }),
-  description: PropTypes.string
+  description: PropTypes.string,
+  rowID: PropTypes.string.isRequired
 };
 
 export default MainTableRow;

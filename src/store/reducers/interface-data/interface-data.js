@@ -5,7 +5,8 @@ import {ActionType} from "../../action";
 const initialState = {
   addRowFormVisualStatus: showingStatus.UNSET,
   searchFormVisualStatus: showingStatus.UNSET,
-  activeRow: showingStatus.UNSET
+  activeRow: showingStatus.UNSET,
+  isLoading: false
 };
 
 export const interfaceData = (state = initialState, action) => {
@@ -26,6 +27,9 @@ export const interfaceData = (state = initialState, action) => {
 
     case ActionType.UPDATE_ACTIVE_ROW:
       return {...state, ...{activeRow: action.payload}}
+
+      case ActionType.UPDATE_LOADING_STATUS:
+        return {...state, ...{isLoading: action.payload}}
   }
   return state;
 };
