@@ -62,6 +62,9 @@ export const usersData = (state = initialState, action) => {
 
     case ActionType.UPDATE_SORT:
       return { ...state, activeSort: action.payload };
+
+    case ActionType.UPDATE_FILTER:
+      return { ...state, filter: action.payload };
   }
   return state;
 };

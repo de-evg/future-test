@@ -6,7 +6,8 @@ export const ActionType = {
   UPDATE_USERS: `UPDATE_USERS`,
   RESET_NEW_ROW: `RESET_NEW_ROW`,
   UPDATE_ACTIVE_ROW: `UPDATE_ACTIVE_ROW`,
-  UPDATE_SORT: `UPDATE_SORT`
+  UPDATE_SORT: `UPDATE_SORT`,
+  UPDATE_FILTER: `UPDATE_FILTER`
 };
 
 export const ActionCreator = {
@@ -34,5 +35,9 @@ export const ActionCreator = {
   updateSort: (sort) => ({
     type: ActionType.UPDATE_SORT,
     payload: sort
+  }),
+  updateFilter: (filter) => ({
+    type: ActionType.UPDATE_FILTER,
+    payload: filter
   })
 };
