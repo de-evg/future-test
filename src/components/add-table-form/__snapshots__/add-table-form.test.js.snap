@@ -1,0 +1,358 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render AddTableForm Should AddTableForm render correctly with HIDE showing status 1`] = `
+<form
+  action="#"
+  className="add-row-form add-row-form--hidden"
+  onSubmit={[Function]}
+>
+  <table
+    className="table"
+  >
+    <thead>
+      <tr
+        className="table__header table__row"
+      >
+        <th
+          className="table__column-title table__data"
+        >
+          ID
+        </th>
+        <th
+          className="table__column-title table__data"
+        >
+          First Name
+        </th>
+        <th
+          className="table__column-title table__data"
+        >
+          Last Name
+        </th>
+        <th
+          className="table__column-title table__data"
+        >
+          Email
+        </th>
+        <th
+          className="table__column-title table__data"
+        >
+          Phone
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        className="table__row"
+      >
+        <td
+          className="table__data"
+        >
+          <input
+            id="id"
+            name="id"
+            onChange={[Function]}
+            placeholder="ID"
+            required={true}
+            type="number"
+            value=""
+          />
+        </td>
+        <td
+          className="table__data"
+        >
+          <input
+            id="firstName"
+            name="firstName"
+            onChange={[Function]}
+            placeholder="Имя"
+            required={true}
+            type="text"
+            value=""
+          />
+        </td>
+        <td
+          className="table__data"
+        >
+          <input
+            id="lastName"
+            name="lastName"
+            onChange={[Function]}
+            placeholder="Фамилия"
+            required={true}
+            type="text"
+            value=""
+          />
+        </td>
+        <td
+          className="table__data"
+        >
+          <input
+            id="email"
+            name="email"
+            onChange={[Function]}
+            placeholder="your@email.ru"
+            required={true}
+            type="email"
+            value=""
+          />
+        </td>
+        <td
+          className="table__data"
+        >
+          <input
+            id="phone"
+            name="phone"
+            onChange={[Function]}
+            placeholder="+7 999 99 99"
+            required={true}
+            type="tel"
+            value=""
+          />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button
+    className="add-row-form__button"
+    type="submit"
+  />
+</form>
+`;
+
+exports[`Render AddTableForm Should AddTableForm render correctly with SHOW showing status 1`] = `
+<form
+  action="#"
+  className="add-row-form add-row-form--show"
+  onSubmit={[Function]}
+>
+  <table
+    className="table"
+  >
+    <thead>
+      <tr
+        className="table__header table__row"
+      >
+        <th
+          className="table__column-title table__data"
+        >
+          ID
+        </th>
+        <th
+          className="table__column-title table__data"
+        >
+          First Name
+        </th>
+        <th
+          className="table__column-title table__data"
+        >
+          Last Name
+        </th>
+        <th
+          className="table__column-title table__data"
+        >
+          Email
+        </th>
+        <th
+          className="table__column-title table__data"
+        >
+          Phone
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        className="table__row"
+      >
+        <td
+          className="table__data"
+        >
+          <input
+            id="id"
+            name="id"
+            onChange={[Function]}
+            placeholder="ID"
+            required={true}
+            type="number"
+            value=""
+          />
+        </td>
+        <td
+          className="table__data"
+        >
+          <input
+            id="firstName"
+            name="firstName"
+            onChange={[Function]}
+            placeholder="Имя"
+            required={true}
+            type="text"
+            value=""
+          />
+        </td>
+        <td
+          className="table__data"
+        >
+          <input
+            id="lastName"
+            name="lastName"
+            onChange={[Function]}
+            placeholder="Фамилия"
+            required={true}
+            type="text"
+            value=""
+          />
+        </td>
+        <td
+          className="table__data"
+        >
+          <input
+            id="email"
+            name="email"
+            onChange={[Function]}
+            placeholder="your@email.ru"
+            required={true}
+            type="email"
+            value=""
+          />
+        </td>
+        <td
+          className="table__data"
+        >
+          <input
+            id="phone"
+            name="phone"
+            onChange={[Function]}
+            placeholder="+7 999 99 99"
+            required={true}
+            type="tel"
+            value=""
+          />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button
+    className="add-row-form__button"
+    type="submit"
+  />
+</form>
+`;
+
+exports[`Render AddTableForm Should AddTableForm render correctly with UNSET showing status 1`] = `
+<form
+  action="#"
+  className="add-row-form "
+  onSubmit={[Function]}
+>
+  <table
+    className="table"
+  >
+    <thead>
+      <tr
+        className="table__header table__row"
+      >
+        <th
+          className="table__column-title table__data"
+        >
+          ID
+        </th>
+        <th
+          className="table__column-title table__data"
+        >
+          First Name
+        </th>
+        <th
+          className="table__column-title table__data"
+        >
+          Last Name
+        </th>
+        <th
+          className="table__column-title table__data"
+        >
+          Email
+        </th>
+        <th
+          className="table__column-title table__data"
+        >
+          Phone
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        className="table__row"
+      >
+        <td
+          className="table__data"
+        >
+          <input
+            id="id"
+            name="id"
+            onChange={[Function]}
+            placeholder="ID"
+            required={true}
+            type="number"
+            value=""
+          />
+        </td>
+        <td
+          className="table__data"
+        >
+          <input
+            id="firstName"
+            name="firstName"
+            onChange={[Function]}
+            placeholder="Имя"
+            required={true}
+            type="text"
+            value=""
+          />
+        </td>
+        <td
+          className="table__data"
+        >
+          <input
+            id="lastName"
+            name="lastName"
+            onChange={[Function]}
+            placeholder="Фамилия"
+            required={true}
+            type="text"
+            value=""
+          />
+        </td>
+        <td
+          className="table__data"
+        >
+          <input
+            id="email"
+            name="email"
+            onChange={[Function]}
+            placeholder="your@email.ru"
+            required={true}
+            type="email"
+            value=""
+          />
+        </td>
+        <td
+          className="table__data"
+        >
+          <input
+            id="phone"
+            name="phone"
+            onChange={[Function]}
+            placeholder="+7 999 99 99"
+            required={true}
+            type="tel"
+            value=""
+          />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button
+    className="add-row-form__button"
+    type="submit"
+  />
+</form>
+`;

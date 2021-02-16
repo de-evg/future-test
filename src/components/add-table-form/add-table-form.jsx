@@ -55,7 +55,7 @@ const AddTableForm = ({ addRowFormVisualStatus, submitNewRow, users }) => {
     if (!values.phone) {
       errors.phone = { borderColor: "red" };
     } else if (
-      !/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/.test(values.phone)
+      !/^((8|\+7)[- ]?)?(\(?\d{3}\)?[- ]?)?[\d\- ]{7,10}$/.test(values.phone)
     ) {
       errors.phone = { borderColor: "red" };
     }
@@ -188,5 +188,5 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(ActionCreator.submitNewRow(newRow));
   },
 });
-
+export {AddTableForm};
 export default connect(mapStateToProps, mapDispatchToProps)(AddTableForm);
