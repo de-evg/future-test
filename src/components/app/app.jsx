@@ -74,4 +74,5 @@ const mapStateToProps = (state) => ({
   isLoading: state[NameSpace.INTERFACE_DATA].isLoading,
 });
 
+export {App};
 export default connect(mapStateToProps)(App);
