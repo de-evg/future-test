@@ -6,9 +6,9 @@ const initialState = {
   users: [
     {
       id: 2,
-      firstName: `Denis`,
-      lastName: `Minaev`,
-      email: `hafae4@mail.ru`,
+      firstName: `Petr`,
+      lastName: `Petrov`,
+      email: `petr@mail.ru`,
       phone: `89175507671`,
       address: {
         streetAddress: "9792 Mattis Ct",
@@ -20,10 +20,10 @@ const initialState = {
     },
     {
       id: 1,
-      firstName: `Denis`,
-      lastName: `Minaev`,
-      email: `hafae4@mail.ru`,
-      phone: `89175507671`,
+      firstName: `Ivan`,
+      lastName: `Ivanov`,
+      email: `iven@mail.ru`,
+      phone: `89167707272`,
       address: {
         streetAddress: "9792 Mattis Ct",
         city: "Waukesha",

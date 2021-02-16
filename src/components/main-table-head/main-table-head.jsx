@@ -28,7 +28,7 @@ const MainTableHead = ({ activeSort, updateSort }) => {
     },
     [updateSort, activeSort]
   );
-
+    const [sortType, sortDirection] = activeSort.split("_");
   return (
     <thead>
       <tr className="table__header table__row">
@@ -40,10 +40,10 @@ const MainTableHead = ({ activeSort, updateSort }) => {
             onClick={handleClick}
           >
             {head}
-            {HeadValues[head] === activeSort.split("_")[0] && activeSort.split("_")[1] === `UP` && (
+            {HeadValues[head] === sortType && sortDirection === `UP` && (
               <span data-sort={head} className="sort__arrow-up"></span>
             )}
-            {HeadValues[head] === activeSort.split("_")[0] && activeSort.split("_")[1] === `DOWN` && (
+            {HeadValues[head] === sortType && sortDirection === `DOWN` && (
               <span data-sort={head} className="sort__arrow-down"></span>
             )}
           </th>
