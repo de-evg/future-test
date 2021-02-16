@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render App Should App render correctly with HIDE showing status, TRUE isLoading 1`] = `
+<Fragment>
+  <MainMenu />
+  <div
+    className="container container--hidden"
+  >
+    <Connect(AddTableForm) />
+    <Connect(Search) />
+  </div>
+  <Loader />
+</Fragment>
+`;
+
+exports[`render App Should App render correctly with SHOW showing status, TRUE isLoading 1`] = `
+<Fragment>
+  <MainMenu />
+  <div
+    className="container container--show"
+  >
+    <Connect(AddTableForm) />
+    <Connect(Search) />
+  </div>
+  <Loader />
+</Fragment>
+`;
+
+exports[`render App Should App render correctly with UNSET showing status, FALSE isLoading 1`] = `
+<Fragment>
+  <MainMenu />
+  <div
+    className="container "
+  >
+    <Connect(AddTableForm) />
+    <Connect(Search) />
+  </div>
+</Fragment>
+`;

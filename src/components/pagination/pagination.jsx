@@ -62,15 +62,8 @@ const Pagination = ({ users, currentStep, setStep }) => {
 
 Pagination.propTypes = {
   users: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-      firstName: PropTypes.string.isRequired,
-      lastName: PropTypes.string.isRequired,
-      email: PropTypes.string.isRequired,
-      phone: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-        .isRequired,
-    })
-  ),
+    PropTypes.object
+  ).isRequired,
   currentStep: PropTypes.number.isRequired,
   setStep: PropTypes.func.isRequired,
 };
@@ -86,4 +79,5 @@ const mapDispatchToProps = (dispatch) => ({
   },
 });
 
+export {Pagination};
 export default connect(mapStateToProps, mapDispatchToProps)(Pagination);

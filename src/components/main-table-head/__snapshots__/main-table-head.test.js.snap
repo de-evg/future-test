@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render MainTableHead correctly 1`] = `
+<thead>
+  <tr
+    className="table__header table__row"
+  >
+    <th
+      className="table__column-title table__data"
+      data-sort="ID"
+      key="head-0"
+      onClick={[Function]}
+    >
+      ID
+    </th>
+    <th
+      className="table__column-title table__data"
+      data-sort="First Name"
+      key="head-1"
+      onClick={[Function]}
+    >
+      First Name
+    </th>
+    <th
+      className="table__column-title table__data"
+      data-sort="Last Name"
+      key="head-2"
+      onClick={[Function]}
+    >
+      Last Name
+    </th>
+    <th
+      className="table__column-title table__data"
+      data-sort="Email"
+      key="head-3"
+      onClick={[Function]}
+    >
+      Email
+    </th>
+    <th
+      className="table__column-title table__data"
+      data-sort="Phone"
+      key="head-4"
+      onClick={[Function]}
+    >
+      Phone
+    </th>
+  </tr>
+</thead>
+`;

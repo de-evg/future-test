@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render MainMenu correctly 1`] = `
+<nav
+  className="main-menu"
+>
+  <Connect(ShowAllBtn) />
+  <Connect(ShowFavoriteBtn) />
+  <Connect(ShowSearchFormBtn) />
+  <Connect(ShowAddFormBtn) />
+</nav>
+`;

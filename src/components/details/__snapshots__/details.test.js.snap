@@ -1,0 +1,108 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Details correctly 1`] = `
+<table
+  className="details"
+>
+  <tr
+    className="details__row"
+  >
+    <th
+      className="details__head"
+      colSpan="1"
+    >
+      Выбран пользователь
+    </th>
+    <td
+      className="details__data"
+      colSpan="3"
+    >
+      X X
+    </td>
+  </tr>
+  <tr
+    className="details__row"
+  >
+    <th
+      className="details__head"
+      colSpan="1"
+    >
+      Описание
+    </th>
+    <td
+      className="details__data"
+      colSpan="3"
+    >
+      <textarea
+        className="details__description"
+        defaultValue="X"
+        disabled={true}
+      />
+    </td>
+  </tr>
+  <tr
+    className="details__row"
+  >
+    <th
+      className="details__head"
+      colSpan="1"
+    >
+      Адрес проживания
+    </th>
+    <td
+      className="details__data"
+      colSpan="3"
+    >
+      
+    </td>
+  </tr>
+  <tr
+    className="details__row"
+  >
+    <th
+      className="details__head"
+      colSpan="1"
+    >
+      Город
+    </th>
+    <td
+      className="details__data"
+      colSpan="3"
+    >
+      
+    </td>
+  </tr>
+  <tr
+    className="details__row"
+  >
+    <th
+      className="details__head"
+      colSpan="1"
+    >
+      Провинция/штат
+    </th>
+    <td
+      className="details__data"
+      colSpan="3"
+    >
+      
+    </td>
+  </tr>
+  <tr
+    className="details__row"
+  >
+    <th
+      className="details__head"
+      colSpan="1"
+    >
+      Индекс
+    </th>
+    <td
+      className="details__data"
+      colSpan="3"
+    >
+      
+    </td>
+  </tr>
+</table>
+`;

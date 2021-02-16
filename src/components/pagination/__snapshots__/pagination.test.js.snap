@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Pagination correctly 1`] = `
+<div
+  className="pagination"
+>
+  <button
+    className="pagination__arrow-left"
+    disabled={true}
+    onClick={[Function]}
+  />
+  <ul>
+    <li
+      className="pagination__firstPage"
+    />
+    <li
+      className="pagination__current"
+    >
+      1
+    </li>
+    <li
+      className="pagination__lastPage"
+    />
+  </ul>
+  <button
+    className="pagination__arrow-right"
+    disabled={true}
+    onClick={[Function]}
+  />
+</div>
+`;

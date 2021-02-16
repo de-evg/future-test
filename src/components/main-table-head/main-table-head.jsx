@@ -67,5 +67,5 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(ActionCreator.updateSort(sort));
   },
 });
-
+export {MainTableHead};
 export default connect(mapStateToProps, mapDispatchToProps)(MainTableHead);

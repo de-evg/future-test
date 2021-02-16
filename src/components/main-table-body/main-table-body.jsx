@@ -10,7 +10,7 @@ import {STEP} from '../../const';
 const MainTableBody = ({users, activeRow, setActiveRow, currentStep}) => {
   return (
     <tbody>
-      {users.slice().slice(currentStep - STEP, currentStep).map((user, i) => (
+      {users.slice(currentStep - STEP, currentStep).map((user, i) => (
         <MainTableRow
           rowID={`row${i}`}
           key={`row-${i}`}
@@ -35,7 +35,6 @@ MainTableBody.propTypes = {
   activeRow: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   setActiveRow: PropTypes.func.isRequired,
   currentStep: PropTypes.number.isRequired,
-  updateCurrentStep: PropTypes.func.isRequired
 };
 
 const mapStateToProps = (state) => ({
@@ -48,9 +47,7 @@ const mapDispatchToProps = (dispatch) => ({
   setActiveRow(activeRow) {
     dispatch(ActionCreator.updateActiveRow(activeRow))
   },
-  updateCurrentStep(step) {
-    dispatch(ActionCreator.updateCurrentStep(step))
-  }
 })
 
+export {MainTableBody};
 export default connect(mapStateToProps, mapDispatchToProps)(MainTableBody);

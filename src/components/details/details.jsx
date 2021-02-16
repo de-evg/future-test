@@ -4,68 +4,72 @@ import PropTypes from 'prop-types';
 const Details = ({details: {address, description, firstName, lastName}}) => {
   return (
     <table className="details">
-      <tr className="details__row">
-        <th colSpan="1" className="details__head">
-          Выбран пользователь
+      <tbody>
+        <tr className="details__row">
+          <th colSpan="1" className="details__head">
+            Выбран пользователь
           </th>
-        <td colSpan="3" className="details__data">
-          {`${firstName} ${lastName}`}
-        </td>
-      </tr>
-      <tr className="details__row">
-        <th colSpan="1" className="details__head">
-          Описание
+          <td colSpan="3" className="details__data">
+            {`${firstName} ${lastName}`}
+          </td>
+        </tr>
+        <tr className="details__row">
+          <th colSpan="1" className="details__head">
+            Описание
           </th>
-        <td colSpan="3" className="details__data">
-          <textarea className="details__description" defaultValue={description} disabled></textarea>
-        </td>
-      </tr>
-      <tr className="details__row">
-        <th colSpan="1" className="details__head">
-          Адрес проживания
+          <td colSpan="3" className="details__data">
+            <textarea className="details__description" defaultValue={description} disabled></textarea>
+          </td>
+        </tr>
+        <tr className="details__row">
+          <th colSpan="1" className="details__head">
+            Адрес проживания
           </th>
-        <td colSpan="3" className="details__data">
-          {address.streetAddress}
-        </td>
-      </tr>
-      <tr className="details__row">
-        <th colSpan="1" className="details__head">
-          Город
+          <td colSpan="3" className="details__data">
+            {address.streetAddress}
+          </td>
+        </tr>
+        <tr className="details__row">
+          <th colSpan="1" className="details__head">
+            Город
           </th>
-        <td colSpan="3" className="details__data">
-          {address.city}
-        </td>
-      </tr>
-      <tr className="details__row">
-        <th colSpan="1" className="details__head">
-          Провинция/штат
+          <td colSpan="3" className="details__data">
+            {address.city}
+          </td>
+        </tr>
+        <tr className="details__row">
+          <th colSpan="1" className="details__head">
+            Провинция/штат
           </th>
-        <td colSpan="3" className="details__data">
-          {address.state}
-        </td>
-      </tr>
-      <tr className="details__row">
-        <th colSpan="1" className="details__head">
-          Индекс
+          <td colSpan="3" className="details__data">
+            {address.state}
+          </td>
+        </tr>
+        <tr className="details__row">
+          <th colSpan="1" className="details__head">
+            Индекс
           </th>
-        <td colSpan="3" className="details__data">
-          {address.zip}
-        </td>
-      </tr>
+          <td colSpan="3" className="details__data">
+            {address.zip}
+          </td>
+        </tr>
+      </tbody>
     </table>
   );
 };
 
 Details.propTypes = {
-  firstName: PropTypes.string.isRequired,
-  lastName: PropTypes.string.isRequired,
-  address: PropTypes.shape({
-    streetAddress: PropTypes.string,
-    city: PropTypes.string,
-    state: PropTypes.string,
-    zip: PropTypes.string
-  }).isRequired,
-  description: PropTypes.string.isRequired
-}
+  details: PropTypes.shape({
+    firstName: PropTypes.string.isRequired,
+    lastName: PropTypes.string.isRequired,
+    address: PropTypes.shape({
+      streetAddress: PropTypes.string,
+      city: PropTypes.string,
+      state: PropTypes.string,
+      zip: PropTypes.string
+    }).isRequired,
+    description: PropTypes.string.isRequired
+  })
+};
 
 export default Details;

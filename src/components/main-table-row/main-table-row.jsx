@@ -7,7 +7,9 @@ import {showingStatus} from '../../const';
 const MainTableRow = ({activeRow, setActiveRow, rowID, user: {id, firstName, lastName, email, phone, address, description}}) => {
   const cellsData = [id, firstName, lastName, email, phone];
   const details = {address, description, firstName, lastName};
-
+  if (id === undefined) {
+    debugger;
+  }
   const handleRowClick = useCallback(() => {
     if (activeRow === rowID) {
       setActiveRow(showingStatus.UNSET);
@@ -28,7 +30,7 @@ const MainTableRow = ({activeRow, setActiveRow, rowID, user: {id, firstName, las
       {
         activeRow === rowID &&
         <tr className="table__details-row">
-          <td colspan="5"><Details details={details} /></td>
+          <td colSpan="5"><Details details={details} /></td>
         </tr>
       }
     </>
@@ -36,18 +38,20 @@ const MainTableRow = ({activeRow, setActiveRow, rowID, user: {id, firstName, las
 };
 
 MainTableRow.propTypes = {
-  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-  firstName: PropTypes.string.isRequired,
-  lastName: PropTypes.string.isRequired,
-  email: PropTypes.string.isRequired,
-  phone: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-  address: PropTypes.shape({
-    streetAddress: PropTypes.string,
-    city: PropTypes.string,
-    state: PropTypes.string,
-    zip: PropTypes.string
+  user: PropTypes.shape({
+    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    firstName: PropTypes.string.isRequired,
+    lastName: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    phone: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    address: PropTypes.shape({
+      streetAddress: PropTypes.string,
+      city: PropTypes.string,
+      state: PropTypes.string,
+      zip: PropTypes.string
+    }),
+    description: PropTypes.string,
   }),
-  description: PropTypes.string,
   rowID: PropTypes.string.isRequired
 };
 

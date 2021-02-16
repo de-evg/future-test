@@ -1,8 +1,11 @@
-import React from "react";
-import renderer from "react-test-renderer";
-import { shallow } from 'enzyme';
+import React from 'react';
+import Enzyme, {shallow} from 'enzyme';
+import Adapter from "enzyme-adapter-react-16";
+import {shallowToJson} from 'enzyme-to-json';
 import { showingStatus } from "../../const";
 import { App } from "./app";
+
+Enzyme.configure({adapter: new Adapter()});
 
 describe(`render App`, () => {
   it(`Should App render correctly with UNSET showing status, FALSE isLoading`, () => {
@@ -11,55 +14,30 @@ describe(`render App`, () => {
       searchFormVisualStatus={showingStatus.UNSET}
       isLoading={false}
       users={[]}
-    />)
-    const tree = renderer
-      .create(wrapper
-        ),
-        {
-          createNodeMock: () => {
-            return {};
-          },
-        }
-      )
-      .toJSON();
+    />);
+    const tree = shallowToJson(wrapper);
     expect(tree).toMatchSnapshot();
   });
 
   it(`Should App render correctly with HIDE showing status, TRUE isLoading`, () => {
-    const tree = renderer
-      .create(
-        <App
-          addRowFormVisualStatus={showingStatus.HIDE}
-          searchFormVisualStatus={showingStatus.HIDE}
-          isLoading={true}
-          users={[]}
-        />,
-        {
-          createNodeMock: () => {
-            return {};
-          },
-        }
-      )
-      .toJSON();
+    const wrapper = shallow(<App
+      addRowFormVisualStatus={showingStatus.HIDE}
+      searchFormVisualStatus={showingStatus.HIDE}
+      isLoading={true}
+      users={[]}
+    />);
+    const tree = shallowToJson(wrapper);
     expect(tree).toMatchSnapshot();
   });
   
   it(`Should App render correctly with SHOW showing status, TRUE isLoading`, () => {
-    const tree = renderer
-      .create(
-        <App
-          addRowFormVisualStatus={showingStatus.SHOW}
-          searchFormVisualStatus={showingStatus.SHOW}
-          isLoading={true}
-          users={[]}
-        />,
-        {
-          createNodeMock: () => {
-            return {};
-          },
-        }
-      )
-      .toJSON();
+    const wrapper = shallow(<App
+      addRowFormVisualStatus={showingStatus.SHOW}
+      searchFormVisualStatus={showingStatus.SHOW}
+      isLoading={true}
+      users={[]}
+    />);
+    const tree = shallowToJson(wrapper);
     expect(tree).toMatchSnapshot();
   });
 });

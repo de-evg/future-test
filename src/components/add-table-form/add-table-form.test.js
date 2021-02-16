@@ -10,7 +10,7 @@ describe(`Render AddTableForm`, () => {
         <AddTableForm
           addRowFormVisualStatus={showingStatus.UNSET}
           submitNewRow={() => {}}
-            />, {
+        />, {
           createNodeMock: () => {
             return {};
           }

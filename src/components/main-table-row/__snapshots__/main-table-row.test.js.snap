@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render MainTableRow correctly 1`] = `
+<Fragment>
+  <tr
+    className="table__row table__row--active"
+    data-active={true}
+    onClick={[Function]}
+    style={
+      Object {
+        "backgroudColor": "#fff",
+      }
+    }
+  >
+    <TableData
+      cellData={0}
+      key="cell-0"
+    />
+    <TableData
+      cellData="X"
+      key="cell-1"
+    />
+    <TableData
+      cellData="X"
+      key="cell-2"
+    />
+    <TableData
+      cellData="email@email.ru"
+      key="cell-3"
+    />
+    <TableData
+      cellData={99999999}
+      key="cell-4"
+    />
+  </tr>
+  <tr
+    className="table__details-row"
+  >
+    <td
+      colspan="5"
+    >
+      <Details
+        details={
+          Object {
+            "address": Object {},
+            "description": "XXX",
+            "firstName": "X",
+            "lastName": "X",
+          }
+        }
+      />
+    </td>
+  </tr>
+</Fragment>
+`;

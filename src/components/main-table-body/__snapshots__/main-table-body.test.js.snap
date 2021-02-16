@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render MainTableBody correctly 1`] = `
+<tbody>
+  <MainTableRow
+    activeRow="row1"
+    key="row-0"
+    rowID="row0"
+    setActiveRow={[Function]}
+    user="user"
+  />
+  <MainTableRow
+    activeRow="row1"
+    key="row-1"
+    rowID="row1"
+    setActiveRow={[Function]}
+    user="user"
+  />
+  <MainTableRow
+    activeRow="row1"
+    key="row-2"
+    rowID="row2"
+    setActiveRow={[Function]}
+    user="user"
+  />
+</tbody>
+`;
