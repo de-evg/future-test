@@ -1,7 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-const Details = ({details: {address, description, firstName, lastName}}) => {
+const Details = ({
+  details: { address, description, firstName, lastName },
+}) => {
   return (
     <table className="details">
       <tbody>
@@ -18,7 +20,11 @@ const Details = ({details: {address, description, firstName, lastName}}) => {
             Описание
           </th>
           <td colSpan="3" className="details__data">
-            <textarea className="details__description" defaultValue={description} disabled></textarea>
+            <textarea
+              className="details__description"
+              defaultValue={description}
+              disabled
+            ></textarea>
           </td>
         </tr>
         <tr className="details__row">
@@ -66,10 +72,10 @@ Details.propTypes = {
       streetAddress: PropTypes.string,
       city: PropTypes.string,
       state: PropTypes.string,
-      zip: PropTypes.string
+      zip: PropTypes.string,
     }).isRequired,
-    description: PropTypes.string.isRequired
-  })
+    description: PropTypes.string.isRequired,
+  }),
 };
 
 export default Details;

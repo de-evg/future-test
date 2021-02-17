@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render TableData correctly Should Table render correctly with NUMBER cellData 1`] = `
+<td
+  className="table__data"
+>
+  123
+</td>
+`;
+
+exports[`Render TableData correctly Should Table render correctly with STRING cellData 1`] = `
+<td
+  className="table__data"
+>
+  some value
+</td>
+`;

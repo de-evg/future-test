@@ -2,7 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const Table = ({ TableBody, TableHead }) => {
-  return <table className="table">{TableHead}{TableBody}</table>;
+  return (
+    <table className="table">
+      {TableHead}
+      {TableBody}
+    </table>
+  );
 };
 
 Table.propTypes = {

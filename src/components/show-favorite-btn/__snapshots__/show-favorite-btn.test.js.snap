@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Reder ShowAllBtn correctly 1`] = `
+<button
+  className="main-menu__button button"
+  onClick={[Function]}
+>
+  Показать избранное
+</button>
+`;

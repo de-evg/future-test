@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Search correctly Reder Search with HIDE showing status correctly 1`] = `
+<form
+  action="#"
+  className="search-form search-form--hidden"
+  onSubmit={[Function]}
+>
+  <input
+    className="search-input"
+    id="filter"
+    onChange={[Function]}
+    type="text"
+  />
+  <button
+    className="search-button"
+    type="submit"
+  >
+    Найти
+  </button>
+</form>
+`;
+
+exports[`Render Search correctly Reder Search with SHOW showing status correctly 1`] = `
+<form
+  action="#"
+  className="search-form search-form--show"
+  onSubmit={[Function]}
+>
+  <input
+    className="search-input"
+    id="filter"
+    onChange={[Function]}
+    type="text"
+  />
+  <button
+    className="search-button"
+    type="submit"
+  >
+    Найти
+  </button>
+</form>
+`;
+
+exports[`Render Search correctly Reder Search with UNSET showing status correctly 1`] = `
+<form
+  action="#"
+  className="search-form "
+  onSubmit={[Function]}
+>
+  <input
+    className="search-input"
+    id="filter"
+    onChange={[Function]}
+    type="text"
+  />
+  <button
+    className="search-button"
+    type="submit"
+  >
+    Найти
+  </button>
+</form>
+`;

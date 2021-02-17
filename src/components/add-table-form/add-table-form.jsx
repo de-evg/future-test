@@ -188,5 +188,5 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(ActionCreator.submitNewRow(newRow));
   },
 });
-export {AddTableForm};
+export { AddTableForm };
 export default connect(mapStateToProps, mapDispatchToProps)(AddTableForm);

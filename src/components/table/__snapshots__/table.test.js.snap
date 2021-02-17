@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should Table render correctly 1`] = `
+<table
+  className="table"
+>
+  <thead />
+  <tbody />
+</table>
+`;

@@ -19,7 +19,7 @@ const ShowFavoriteBtn = ({ loadSmallData, setIsLoadingStatus }) => {
 
 ShowFavoriteBtn.propTypes = {
   loadSmallData: PropTypes.func.isRequired,
-  setIsLoadingStatus: PropTypes.func.isRequired
+  setIsLoadingStatus: PropTypes.func.isRequired,
 };
 
 const mapDispatchToProps = (dispatch) => ({
@@ -31,4 +31,5 @@ const mapDispatchToProps = (dispatch) => ({
   },
 });
 
+export { ShowFavoriteBtn };
 export default connect(null, mapDispatchToProps)(ShowFavoriteBtn);

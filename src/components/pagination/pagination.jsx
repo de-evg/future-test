@@ -7,8 +7,8 @@ import { NameSpace } from "../../store/reducers/root";
 
 const START_PAGE = 1;
 
-const Pagination = ({ users, currentStep, setStep }) => {
-  const maxPage = Math.ceil(users.length / STEP);
+const Pagination = ({ userCount, currentStep, setStep }) => {
+  const maxPage = Math.ceil(userCount / STEP);
   const currentPage = Math.ceil(currentStep / STEP);
 
   const handlePrevBtnClick = useCallback(() => {
@@ -61,15 +61,13 @@ const Pagination = ({ users, currentStep, setStep }) => {
 };
 
 Pagination.propTypes = {
-  users: PropTypes.arrayOf(
-    PropTypes.object
-  ).isRequired,
+  userCount: PropTypes.number.isRequired,
   currentStep: PropTypes.number.isRequired,
   setStep: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
-  users: state[NameSpace.USERS_DATA].users,
+  userCount: state[NameSpace.USERS_DATA].userCount,
   currentStep: state[NameSpace.USERS_DATA].currentStep,
 });
 
@@ -79,5 +77,5 @@ const mapDispatchToProps = (dispatch) => ({
   },
 });
 
-export {Pagination};
+export { Pagination };
 export default connect(mapStateToProps, mapDispatchToProps)(Pagination);

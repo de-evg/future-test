@@ -4,6 +4,7 @@ import { ActionType } from "../../action";
 
 const initialState = {
   users: [],
+  userCount: 0,
   currentStep: 50,
   filter: "",
   activeSort: DEFAULT_SORT,
@@ -40,6 +41,9 @@ export const usersData = (state = initialState, action) => {
 
     case ActionType.UPDATE_STEP:
       return { ...state, currentStep: action.payload };
+
+    case ActionType.UPDATE_USER_COUNT:
+      return { ...state, userCount: action.payload };
   }
   return state;
 };

@@ -59,4 +59,5 @@ const mapDispatchToProps = (dispatch) => ({
   },
 });
 
+export { Search };
 export default connect(mapStateToProps, mapDispatchToProps)(Search);

@@ -10,15 +10,19 @@ const HeadValues = {
   [`First Name`]: `FIRSTNAME`,
   [`Last Name`]: `LASTNAME`,
   [`Email`]: `EMAIL`,
-  [`Phone`]: `PHONE`
+  [`Phone`]: `PHONE`,
 };
 
 const SortName = {
-  [`ID`]: (activeSort) => activeSort === `ID_UP` ? `ID_DOWN` : `ID_UP`,
-  [`First Name`]: (activeSort) =>  activeSort === `FIRSTNAME_UP` ? `FIRSTNAME_DOWN` : `FIRSTNAME_UP`,
-  [`Last Name`]: (activeSort) =>  activeSort === `LASTNAME_UP` ? `LASTNAME_DOWN` : `LASTNAME_UP`, 
-  [`Email`]: (activeSort) => activeSort === `EMAIL_UP` ? `EMAIL_DOWN` : `EMAIL_UP`,
-  [`Phone`]: (activeSort) => activeSort === `PHONE_UP` ? `PHONE_DOWN` : `PHONE_UP`
+  [`ID`]: (activeSort) => (activeSort === `ID_UP` ? `ID_DOWN` : `ID_UP`),
+  [`First Name`]: (activeSort) =>
+    activeSort === `FIRSTNAME_UP` ? `FIRSTNAME_DOWN` : `FIRSTNAME_UP`,
+  [`Last Name`]: (activeSort) =>
+    activeSort === `LASTNAME_UP` ? `LASTNAME_DOWN` : `LASTNAME_UP`,
+  [`Email`]: (activeSort) =>
+    activeSort === `EMAIL_UP` ? `EMAIL_DOWN` : `EMAIL_UP`,
+  [`Phone`]: (activeSort) =>
+    activeSort === `PHONE_UP` ? `PHONE_DOWN` : `PHONE_UP`,
 };
 
 const MainTableHead = ({ activeSort, updateSort }) => {
@@ -28,13 +32,13 @@ const MainTableHead = ({ activeSort, updateSort }) => {
     },
     [updateSort, activeSort]
   );
-    const [sortType, sortDirection] = activeSort.split("_");
+  const [sortType, sortDirection] = activeSort.split("_");
   return (
     <thead>
       <tr className="table__header table__row">
         {tableHeads.map((head, i) => (
           <th
-            key={`head-${i}`}            
+            key={`head-${i}`}
             data-sort={head}
             className="table__column-title table__data"
             onClick={handleClick}
@@ -55,7 +59,7 @@ const MainTableHead = ({ activeSort, updateSort }) => {
 
 MainTableHead.propTypes = {
   activeSort: PropTypes.string.isRequired,
-  updateSort: PropTypes.func.isRequired
+  updateSort: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
@@ -67,5 +71,5 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(ActionCreator.updateSort(sort));
   },
 });
-export {MainTableHead};
+export { MainTableHead };
 export default connect(mapStateToProps, mapDispatchToProps)(MainTableHead);

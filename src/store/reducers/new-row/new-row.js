@@ -1,5 +1,5 @@
 /* eslint-disable default-case */
-import {ActionType} from "../../action";
+import { ActionType } from "../../action";
 
 const initialState = {
   id: "",
@@ -11,15 +11,15 @@ const initialState = {
   isFirsNameValid: false,
   isLastNameValid: false,
   isPhoneValid: false,
-  isEmailValid: false
+  isEmailValid: false,
 };
 
 export const newRow = (state = initialState, action) => {
   switch (action.type) {
     case ActionType.UPDATE_NEW_ROW:
-      return {...state, ...action.payload}
+      return { ...state, ...action.payload };
     case ActionType.RESET_NEW_ROW:
-      return {...state, ...initialState}
+      return { ...state, ...initialState };
   }
   return state;
 };

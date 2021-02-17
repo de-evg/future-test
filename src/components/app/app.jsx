@@ -39,7 +39,7 @@ const App = ({
         <Search />
       </div>
       {isLoading && <Loader />}
-      {(!isLoading && !!users.length) && (
+      {!isLoading && !!users.length && (
         <>
           <Table TableHead={<TableHead />} TableBody={<MainTableBody />} />
           <Pagination />
@@ -74,5 +74,5 @@ const mapStateToProps = (state) => ({
   isLoading: state[NameSpace.INTERFACE_DATA].isLoading,
 });
 
-export {App};
+export { App };
 export default connect(mapStateToProps)(App);

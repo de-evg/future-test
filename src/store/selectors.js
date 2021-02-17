@@ -1,5 +1,5 @@
 import { createSelector } from "reselect";
-import {sortUsers} from "../utils/sort";
+import { sortUsers } from "../utils/sort";
 import { NameSpace } from "./reducers/root";
 
 export const getFilteredUsers = createSelector(
@@ -10,7 +10,9 @@ export const getFilteredUsers = createSelector(
     let filteredUsers = [...users];
     if (filter) {
       filteredUsers = users.filter((user) => {
-        return Object.keys(user).some((key) => user[key].toString().includes(filter));
+        return Object.keys(user).some((key) =>
+          user[key].toString().includes(filter)
+        );
       });
     }
     return sortUsers(activeSort, filteredUsers);

@@ -20,11 +20,18 @@ exports[`Render Pagination correctly 1`] = `
     </li>
     <li
       className="pagination__lastPage"
-    />
+    >
+      <button
+        href="#"
+        onClick={[Function]}
+      >
+        10
+      </button>
+    </li>
   </ul>
   <button
     className="pagination__arrow-right"
-    disabled={true}
+    disabled={false}
     onClick={[Function]}
   />
 </div>

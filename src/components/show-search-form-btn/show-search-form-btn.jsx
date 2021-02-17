@@ -30,16 +30,7 @@ const ShowSearchFormBtn = ({
 ShowSearchFormBtn.propTypes = {
   updateShowStatus: PropTypes.func.isRequired,
   searchFormVisualStatus: PropTypes.string.isRequired,
-  users: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-      firstName: PropTypes.string.isRequired,
-      lastName: PropTypes.string.isRequired,
-      email: PropTypes.string.isRequired,
-      phone: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-        .isRequired,
-    })
-  ),
+  users: PropTypes.arrayOf(PropTypes.object).isRequired,
   isLoading: PropTypes.bool.isRequired,
 };
 
@@ -56,4 +47,5 @@ const mapDispatchToProps = (dispatch) => ({
   },
 });
 
+export { ShowSearchFormBtn };
 export default connect(mapStateToProps, mapDispatchToProps)(ShowSearchFormBtn);

@@ -1,13 +1,22 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import {connect} from 'react-redux';
-import {NameSpace} from '../../store/reducers/root';
+import React, { useEffect } from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { NameSpace } from "../../store/reducers/root";
 import MainTableRow from "../main-table-row/main-table-row";
-import {ActionCreator} from '../../store/action';
-import {getFilteredUsers} from '../../store/selectors';
-import {STEP} from '../../const';
+import { ActionCreator } from "../../store/action";
+import { getFilteredUsers } from "../../store/selectors";
+import { STEP } from "../../const";
 
-const MainTableBody = ({users, activeRow, setActiveRow, currentStep}) => {
+const MainTableBody = ({
+  users,
+  activeRow,
+  setActiveRow,
+  currentStep,
+  updateCount,
+}) => {
+  useEffect(() => {
+    updateCount(users.length);
+  }, [updateCount, users]);
   return (
     <tbody>
       {users.slice(currentStep - STEP, currentStep).map((user, i) => (
@@ -30,24 +39,31 @@ MainTableBody.propTypes = {
       firstName: PropTypes.string.isRequired,
       lastName: PropTypes.string.isRequired,
       email: PropTypes.string.isRequired,
-      phone: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-    })),
-  activeRow: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+      phone: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+        .isRequired,
+    })
+  ),
+  activeRow: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+    .isRequired,
   setActiveRow: PropTypes.func.isRequired,
   currentStep: PropTypes.number.isRequired,
+  updateCount: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   users: getFilteredUsers(state),
   activeRow: state[NameSpace.INTERFACE_DATA].activeRow,
-  currentStep: state[NameSpace.USERS_DATA].currentStep
+  currentStep: state[NameSpace.USERS_DATA].currentStep,
 });
 
 const mapDispatchToProps = (dispatch) => ({
   setActiveRow(activeRow) {
-    dispatch(ActionCreator.updateActiveRow(activeRow))
+    dispatch(ActionCreator.updateActiveRow(activeRow));
   },
-})
+  updateCount(count) {
+    dispatch(ActionCreator.updateUserCount(count));
+  },
+});
 
-export {MainTableBody};
+export { MainTableBody };
 export default connect(mapStateToProps, mapDispatchToProps)(MainTableBody);

@@ -14,8 +14,10 @@ const ShowAddFormBtn = ({
   const handleClick = useCallback(() => {
     updateShowStatus();
   }, [updateShowStatus]);
+
   const activeClass =
     addRowFormVisualStatus === showingStatus.SHOW ? "button--active" : "";
+
   return (
     <button
       className={`main-menu__button button ${activeClass}`}
@@ -30,16 +32,7 @@ const ShowAddFormBtn = ({
 ShowAddFormBtn.propTypes = {
   updateShowStatus: PropTypes.func.isRequired,
   addRowFormVisualStatus: PropTypes.string.isRequired,
-  users: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-      firstName: PropTypes.string.isRequired,
-      lastName: PropTypes.string.isRequired,
-      email: PropTypes.string.isRequired,
-      phone: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-        .isRequired,
-    })
-  ),
+  users: PropTypes.arrayOf(PropTypes.object).isRequired,
   isLoading: PropTypes.bool.isRequired,
 };
 
@@ -56,4 +49,5 @@ const mapDispatchToProps = (dispatch) => ({
   },
 });
 
+export { ShowAddFormBtn };
 export default connect(mapStateToProps, mapDispatchToProps)(ShowAddFormBtn);

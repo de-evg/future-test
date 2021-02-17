@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render ShowAddFormBtn correctly Reder ShowAddFormBtn correctly with HIDE showing status, FALSE isLoading 1`] = `
+<button
+  className="main-menu__button button "
+  disabled={false}
+  onClick={[Function]}
+>
+  Найти
+</button>
+`;
+
+exports[`Render ShowAddFormBtn correctly Reder ShowAddFormBtn correctly with SHOW showing status, FALSE isLoading 1`] = `
+<button
+  className="main-menu__button button button--active"
+  disabled={false}
+  onClick={[Function]}
+>
+  Найти
+</button>
+`;
+
+exports[`Render ShowAddFormBtn correctly Reder ShowAddFormBtn correctly with UNSET showing status, TRUE isLoading 1`] = `
+<button
+  className="main-menu__button button "
+  disabled={true}
+  onClick={[Function]}
+>
+  Найти
+</button>
+`;
