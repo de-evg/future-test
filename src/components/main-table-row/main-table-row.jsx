@@ -12,9 +12,7 @@ const MainTableRow = ({
 }) => {
   const cellsData = [id, firstName, lastName, email, phone];
   const details = { address, description, firstName, lastName };
-  if (id === undefined) {
-    debugger;
-  }
+
   const handleRowClick = useCallback(() => {
     if (activeRow === rowID) {
       setActiveRow(showingStatus.UNSET);
@@ -25,6 +23,7 @@ const MainTableRow = ({
 
   const activeClass = activeRow === rowID ? "table__row--active" : "";
   const resetColor = activeRow ? { backgroudColor: "#fff" } : "";
+
   return (
     <>
       <tr

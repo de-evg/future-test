@@ -33,16 +33,7 @@ const MainTableBody = ({
 };
 
 MainTableBody.propTypes = {
-  users: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-      firstName: PropTypes.string.isRequired,
-      lastName: PropTypes.string.isRequired,
-      email: PropTypes.string.isRequired,
-      phone: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-        .isRequired,
-    })
-  ),
+  users: PropTypes.arrayOf(PropTypes.object).isRequired,
   activeRow: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
     .isRequired,
   setActiveRow: PropTypes.func.isRequired,

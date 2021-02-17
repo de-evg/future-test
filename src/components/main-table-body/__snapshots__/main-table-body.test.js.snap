@@ -7,21 +7,66 @@ exports[`Render MainTableBody correctly 1`] = `
     key="row-0"
     rowID="row0"
     setActiveRow={[Function]}
-    user="user"
+    user={
+      Object {
+        "address": Object {
+          "city": "Waukesha",
+          "state": "WI",
+          "streetAddress": "9792 Mattis Ct",
+          "zip": "22178",
+        },
+        "description": "et lacus magna dolor...",
+        "email": "petr@mail.ru",
+        "firstName": "Petr",
+        "id": 2,
+        "lastName": "Petrov",
+        "phone": "89105507671",
+      }
+    }
   />
   <MainTableRow
     activeRow="row1"
     key="row-1"
     rowID="row1"
     setActiveRow={[Function]}
-    user="user"
+    user={
+      Object {
+        "address": Object {
+          "city": "Waukesha",
+          "state": "WI",
+          "streetAddress": "9792 Mattis Ct",
+          "zip": "22178",
+        },
+        "description": "et lacus magna dolor...",
+        "email": "petr@mail.ru",
+        "firstName": "Petr",
+        "id": 2,
+        "lastName": "Petrov",
+        "phone": "89105507671",
+      }
+    }
   />
   <MainTableRow
     activeRow="row1"
     key="row-2"
     rowID="row2"
     setActiveRow={[Function]}
-    user="user"
+    user={
+      Object {
+        "address": Object {
+          "city": "Waukesha",
+          "state": "WI",
+          "streetAddress": "9792 Mattis Ct",
+          "zip": "22178",
+        },
+        "description": "et lacus magna dolor...",
+        "email": "petr@mail.ru",
+        "firstName": "Petr",
+        "id": 2,
+        "lastName": "Petrov",
+        "phone": "89105507671",
+      }
+    }
   />
 </tbody>
 `;
